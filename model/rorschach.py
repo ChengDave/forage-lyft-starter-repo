@@ -1,12 +1,10 @@
-from engine.willoughby_engine import WilloughbyEngine
-from battery.nubbin_battery import NubbinBattery
+from car_factory import CarFactory
 from datetime import datetime
 
 
 class Rorschach:
     def __init__(self, last_service_date, current_mileage, last_service_mileage):
-        self.engine = WilloughbyEngine(current_mileage, last_service_mileage)
-        self.battery = NubbinBattery(last_service_date, datetime.today().date())
-
+        self.__current_date = datetime.today().date()
+        self.__car = CarFactory.create_rorschach(self.__current_date, last_service_date, current_mileage, last_service_mileage)
     def needs_service(self):
-        return self.engine.needs_service() or self.battery.needs_service()
+        return self.__car.needs_service()
