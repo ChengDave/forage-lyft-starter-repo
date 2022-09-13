@@ -1,2 +1,3 @@
-# Starter Repo
-This repo has everything you need to get started on the program, good luck!
+![Certificate](img/LyftCertificate.png)
+
+![UML Diagram](img/uml_diagram_lyft_refactor.png)
